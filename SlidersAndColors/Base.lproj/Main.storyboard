@@ -106,21 +106,51 @@
                                     </slider>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o1A-es-S3y">
+                                <rect key="frame" x="116.00000000000001" y="449" width="161.33333333333337" height="20.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transparency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFz-k8-1kn">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpz-Ik-0le">
+                                        <rect key="frame" x="117.99999999999999" y="0.0" width="43.333333333333329" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zKP-ka-gcO">
+                                <rect key="frame" x="18" y="484.33333333333331" width="357" height="30.999999999999943"/>
+                                <connections>
+                                    <action selector="alphaSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="lVx-bL-0bm"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="63r-Xs-lfE" firstAttribute="top" secondItem="aBP-3h-fbt" secondAttribute="bottom" constant="20" id="0A5-wd-gLR"/>
+                            <constraint firstItem="o1A-es-S3y" firstAttribute="top" secondItem="63r-Xs-lfE" secondAttribute="bottom" constant="30" id="0Px-3X-p32"/>
                             <constraint firstItem="Sh3-he-da7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2C0-yw-JzC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aBP-3h-fbt" secondAttribute="trailing" constant="20" id="6Y7-wQ-v7s"/>
                             <constraint firstItem="aBP-3h-fbt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="7xs-hE-cBc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zKP-ka-gcO" secondAttribute="trailing" constant="20" id="7xv-7d-wgM"/>
+                            <constraint firstItem="zKP-ka-gcO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fqx-qL-P1h"/>
+                            <constraint firstItem="zKP-ka-gcO" firstAttribute="top" secondItem="o1A-es-S3y" secondAttribute="bottom" constant="15" id="bgy-uN-KWF"/>
                             <constraint firstItem="63r-Xs-lfE" firstAttribute="leading" secondItem="Sh3-he-da7" secondAttribute="trailing" id="dj0-Ko-Yhl"/>
+                            <constraint firstItem="o1A-es-S3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gvl-eJ-Rog"/>
                             <constraint firstItem="aBP-3h-fbt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m2l-FP-GKX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="63r-Xs-lfE" secondAttribute="trailing" constant="20" id="rFp-ub-byW"/>
                             <constraint firstItem="Sh3-he-da7" firstAttribute="top" secondItem="aBP-3h-fbt" secondAttribute="bottom" constant="25" id="tVk-nM-COl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alphaSlider" destination="zKP-ka-gcO" id="BZq-yF-e19"/>
+                        <outlet property="alphaValue" destination="Hpz-Ik-0le" id="tz1-Ff-bMl"/>
                         <outlet property="blueSlider" destination="jhk-cM-3pk" id="zEE-M0-js8"/>
                         <outlet property="blueValue" destination="JAp-Gc-a6R" id="gzx-cZ-mxz"/>
                         <outlet property="greenSlider" destination="4LA-xM-AtC" id="79U-Y5-d0e"/>

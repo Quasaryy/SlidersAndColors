@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
+    @IBOutlet var alphaValue: UILabel!
+    @IBOutlet var alphaSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,21 +48,32 @@ class ViewController: UIViewController {
         
         // Initial color setup for viewScreen label
         viewScreen.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
+        
+        // Initial setup for alphaSlider
+        alphaSlider.value = 1
+        alphaValue.text = String(Int(alphaSlider.value * 100)) + "%"
     }
     
     @IBAction func redSliderAction(_ sender: UISlider) {
         redValue.text = String(Int(sender.value))
-        viewScreen.backgroundColor = UIColor(red: CGFloat(sender.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
+        viewScreen.backgroundColor = UIColor(red: CGFloat(sender.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: CGFloat(alphaSlider.value))
     }
     
     @IBAction func greenSliderAction(_ sender: UISlider) {
         greenValue.text = String(Int(sender.value))
-        viewScreen.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
+        viewScreen.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: CGFloat(alphaSlider.value))
     }
     
     @IBAction func blueSliderAction(_ sender: UISlider) {
         blueValue.text = String(Int(sender.value))
-        viewScreen.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
+        viewScreen.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: CGFloat(alphaSlider.value))
+    }
+    
+    
+    @IBAction func alphaSliderAction(_ sender: UISlider) {
+        alphaValue.text = String(Int(alphaSlider.value * 100)) + "%"
+        viewScreen.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: CGFloat(alphaSlider.value))
+        
     }
     
 }
