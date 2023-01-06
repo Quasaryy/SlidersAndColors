@@ -43,6 +43,9 @@ class ViewController: UIViewController {
         blueSlider.maximumValue = 255
         blueSlider.value = 150
         blueValue.text = String(Int(blueSlider.value))
+        
+        // Initial color setup for viewScreen label
+        viewScreen.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
     }
     
     @IBAction func redSliderAction(_ sender: UISlider) {
